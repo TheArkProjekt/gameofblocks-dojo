@@ -5,6 +5,8 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { ReactQueryStreamedHydration } from "@tanstack/react-query-next-experimental";
 import { httpBatchLink, loggerLink } from "@trpc/client";
+import { ChakraProvider } from '@chakra-ui/react';
+
 import superjson from "superjson";
 
 import { api } from "~/utils/api";
@@ -48,7 +50,9 @@ export function TRPCReactProvider(props: { children: React.ReactNode }) {
     <QueryClientProvider client={queryClient}>
       <ReactQueryStreamedHydration>
         <api.Provider client={trpcClient} queryClient={queryClient}>
+          <ChakraProvider>
           {props.children}
+          </ChakraProvider>
         </api.Provider>
       </ReactQueryStreamedHydration>
       <ReactQueryDevtools initialIsOpen={false} />
