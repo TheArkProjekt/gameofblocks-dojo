@@ -13,9 +13,13 @@
     "with-env": "dotenv -e ../../.env --"
   },
   "dependencies": {
+    "@chakra-ui/react": "^2.8.0",
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
     "@gob-dojo/api": "^0.1.0",
     "@gob-dojo/auth": "^0.1.0",
     "@gob-dojo/db": "^0.1.0",
+    "@react-hook/window-size": "^3.1.1",
     "@t3-oss/env-nextjs": "^0.6.0",
     "@tanstack/react-query": "^4.29.23",
     "@tanstack/react-query-devtools": "^4.29.23",
@@ -24,10 +28,15 @@
     "@trpc/next": "^10.34.0",
     "@trpc/react-query": "^10.34.0",
     "@trpc/server": "^10.34.0",
+    "framer-motion": "^10.13.2",
+    "honeycomb-grid": "^4.1.4",
     "next": "^13.4.10",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-indiana-drag-scroll": "^2.2.0",
+    "simplebar-react": "^3.2.4",
     "superjson": "1.13.1",
+    "unique-names-generator": "^4.7.1",
     "zod": "^3.21.4"
   },
   "devDependencies": {

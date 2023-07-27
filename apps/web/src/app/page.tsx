@@ -1,7 +1,7 @@
 import { Suspense } from "react";
 
 import { auth } from "@gob-dojo/auth";
-
+import Kingdom from "~/components/kingdom";
 import { SignIn, SignOut } from "~/components/auth";
 import { CreatePostForm, PostList } from "./posts";
 
@@ -13,11 +13,7 @@ export default function HomePage() {
           Create <span className="text-pink-400">T3</span> Turbo
         </h1>
         <AuthShowcase />
-
-        <CreatePostForm />
-        <Suspense fallback={<span>Loading...</span>}>
-          <PostList />
-        </Suspense>
+        <Kingdom/>
       </div>
     </main>
   );
