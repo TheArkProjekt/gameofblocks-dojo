@@ -1,5 +1,5 @@
 {
-  "name": "@gob-dojo/nextjs",
+  "name": "@gob-dojo/web",
   "version": "0.1.0",
   "private": true,
   "scripts": {
