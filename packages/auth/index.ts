@@ -1,8 +1,14 @@
 import type { DefaultSession } from "@auth/core/types";
 import { PrismaAdapter } from "@auth/prisma-adapter";
 import NextAuth from "next-auth";
+import DiscordProvider from "next-auth/providers/discord";
+import EmailProvider from "next-auth/providers/email";
+import { Resend } from "resend";
 
 import { prisma } from "@gob-dojo/db";
+import { LoginVerificationCode } from "@gob-dojo/emails";
+
+import { env } from "./env.mjs";
 
 export type { Session } from "next-auth";
 
@@ -18,13 +24,29 @@ declare module "next-auth" {
   }
 }
 
+const resend = new Resend(env.RESEND_API_KEY);
+
 export const {
   handlers: { GET, POST },
   auth,
   CSRF_experimental,
 } = NextAuth({
   adapter: PrismaAdapter(prisma),
-  providers: [],
+  providers: [
+    EmailProvider({
+      async sendVerificationRequest({ identifier, url }) {
+        await resend.sendEmail({
+          from: "Game of Blocks <notifications@gameofblocks.io>",
+          to: identifier,
+          subject: "Login to Game of Blocks",
+          react: LoginVerificationCode({ url }),
+        });
+      },
+      type: "email",
+      id: "email",
+      name: "Email",
+    }),
+  ],
   callbacks: {
     session: ({ session, user }) => ({
       ...session,

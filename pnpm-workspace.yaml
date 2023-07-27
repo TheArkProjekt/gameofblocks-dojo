@@ -3,4 +3,6 @@ packages:
   - packages/api
   - packages/auth
   - packages/db
+  - packages/emails
+  # - packages/emails/.react-emails
   - packages/config/*
