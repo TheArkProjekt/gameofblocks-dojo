@@ -1,18 +1,22 @@
-/** @typedef  {import("prettier").Config} PrettierConfig */
-/** @typedef  {import("@ianvs/prettier-plugin-sort-imports").PluginConfig} SortImportsConfig */
+/** @typedef  {import("@ianvs/prettier-plugin-sort-imports").PluginConfig} SortImportsConfig*/
+/** @typedef  {import("prettier").Config} PrettierConfig*/
+/** @typedef  {{ tailwindConfig: string }} TailwindConfig*/
 
-/** @type { PrettierConfig | SortImportsConfig } */
+/** @type { PrettierConfig | SortImportsConfig | TailwindConfig } */
 const config = {
+  trailingComma: "all",
   plugins: [
     "@ianvs/prettier-plugin-sort-imports",
+    "prettier-plugin-tailwindcss",
   ],
+  tailwindConfig: "./packages/config/tailwind",
   importOrder: [
-    "^(react/(.*)$)|^(react$)|^(react-native(.*)$)",
+    "^(react/(.*)$)|^(react$)",
     "^(next/(.*)$)|^(next$)",
     "^(expo(.*)$)|^(expo$)",
     "<THIRD_PARTY_MODULES>",
     "",
-    "^@gob-dojo/(.*)$",
+    "^@ark-app/(.*)$",
     "",
     "^~/utils/(.*)$",
     "^~/components/(.*)$",
@@ -21,7 +25,7 @@ const config = {
     "^[./]",
   ],
   importOrderParserPlugins: ["typescript", "jsx", "decorators-legacy"],
-  importOrderTypeScriptVersion: "4.4.0",
+  importOrderTypeScriptVersion: "5.0.4",
 };
 
-export default config;
+module.exports = config;
