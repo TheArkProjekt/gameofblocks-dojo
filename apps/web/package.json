@@ -13,10 +13,10 @@
     "with-env": "dotenv -e ../../.env --"
   },
   "dependencies": {
-    "@gob-dojo/tailwind-config": "^0.1.0",
     "@gob-dojo/api": "^0.1.0",
     "@gob-dojo/auth": "^0.1.0",
     "@gob-dojo/db": "^0.1.0",
+    "@gob-dojo/tailwind-config": "^0.1.0",
     "@react-hook/window-size": "^3.1.1",
     "@t3-oss/env-nextjs": "^0.6.0",
     "@tanstack/react-query": "^4.29.23",
@@ -26,6 +26,7 @@
     "@trpc/next": "^10.34.0",
     "@trpc/react-query": "^10.34.0",
     "@trpc/server": "^10.34.0",
+    "alea": "^1.0.1",
     "framer-motion": "^10.13.2",
     "honeycomb-grid": "^4.1.4",
     "next": "^13.4.10",
@@ -35,6 +36,7 @@
     "react-indiana-drag-scroll": "^2.2.0",
     "resend": "^0.17.2",
     "simplebar-react": "^3.2.4",
+    "simplex-noise": "^4.0.1",
     "superjson": "1.13.1",
     "tailwindcss": "^3.0.23",
     "unique-names-generator": "^4.7.1",

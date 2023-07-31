@@ -1,7 +1,6 @@
 import type { DefaultSession } from "@auth/core/types";
 import { PrismaAdapter } from "@auth/prisma-adapter";
 import NextAuth from "next-auth";
-import DiscordProvider from "next-auth/providers/discord";
 import EmailProvider from "next-auth/providers/email";
 import { Resend } from "resend";
 
@@ -13,7 +12,7 @@ import { env } from "./env.mjs";
 export type { Session } from "next-auth";
 
 // Update this whenever adding new providers so that the client can
-export const providers = ["discord"] as const;
+export const providers = ["email"] as const;
 export type OAuthProviders = (typeof providers)[number];
 
 declare module "next-auth" {

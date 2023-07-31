@@ -1,9 +1,22 @@
-import type { Config } from "tailwindcss";
-
 import baseConfig from "@gob-dojo/tailwind-config";
+import type { Config } from "tailwindcss";
 
 export default {
   content: ["./src/**/*.tsx"],
+  safelist: [
+    "fill-water-500",
+    "fill-earth-500",
+    "fill-wood-500",
+    "fill-arcane-600",
+    "fill-metal-600",
+    "fill-pearl-950",
+    "stroke-water-400",
+    "stroke-earth-400",
+    "stroke-wood-400",
+    "stroke-arcane-500",
+    "stroke-metal-500",
+    "stroke-pearl-900",
+  ],
   presets: [baseConfig],
   theme: {
     screens: {
