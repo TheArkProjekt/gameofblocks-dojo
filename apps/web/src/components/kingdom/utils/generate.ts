@@ -85,8 +85,8 @@ function moistureMap(settings: settingsType) {
 }
 
 export const generateMap = () => {
-  const elevationSeed = alea("buffalo");
-  const moistureSeed = alea("mariana");
+  const elevationSeed = alea("toto");
+  const moistureSeed = alea("toto");
 
   class GobHex extends defineHex({
     dimensions: { width: HEX_SIZE.width, height: HEX_SIZE.height },
@@ -118,7 +118,7 @@ export const generateMap = () => {
     moistureOctaves_3: 0.12,
     redistributionElevation: 1,
     redistributionMoisture: 1.0,
-    createIsland: true,
+    createIsland: false,
     contourInterval_0: 0.2,
     contourInterval_1: 0.3,
     contourInterval_2: 0.5,
@@ -132,6 +132,7 @@ export const generateMap = () => {
   if (!elevation || !moisture) {
     return;
   }
+
   for (const hex of grid) {
     const { col, row } = hexToOffset(hex);
     const elev = elevation[col]?.[row] || 0;
