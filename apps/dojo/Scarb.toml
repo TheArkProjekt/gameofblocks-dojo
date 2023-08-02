@@ -1,0 +1,26 @@
+[package]
+name = "gameofblocks"
+version = "0.0.1"
+cairo-version = "2.0.1"
+
+[cairo]
+sierra-replace-ids = true
+
+[dependencies]
+dojo = { git = "https://github.com/dojoengine/dojo" }
+
+[[target.dojo]]
+
+[tool.dojo.env]
+
+# Katana
+rpc_url = "http://localhost:5050"
+account_address = "0x03ee9e18edc71a6df30ac3aca2e0b02a198fbce19b7480a63a0d71cbd76652e0"
+private_key = "0x01b7b37a580d91bc3ad4f9933ed61f3a395e0e51c9dd5553323b8ca3942bb44e"
+
+# Madara
+#rpc_url = "https://rinnegan.madara.zone"
+#account_address = "0x2"
+#private_key = "0xc1cf1490de1352865301bb8705143f3ef938f97fdf892f1090dcb5ac7bcd1d"
+
+#world_address = "0x5b328933afdbbfd44901fd69a2764a254edbb6e992ae87cf958c70493f2d201"
