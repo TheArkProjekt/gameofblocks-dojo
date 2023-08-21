@@ -8,10 +8,11 @@ use debug::PrintTrait;
 use dojo::world::{IWorldDispatcher, IWorldDispatcherTrait};
 use dojo::test_utils::spawn_test_world;
 use starknet::{ContractAddress, syscalls::deploy_syscall};
+use gameofblocks::components::{kingdom};
 
 fn spawn_kingdom() -> (ContractAddress, u32, felt252) {
     let mut components = array::ArrayTrait::new();
-    // components.append(game::TEST_CLASS_HASH);
+    // components.append(kingdom::TEST_CLASS_HASH);
     // components.append(player::TEST_CLASS_HASH);
     // components.append(location::TEST_CLASS_HASH);
     // components.append(risks::TEST_CLASS_HASH);
